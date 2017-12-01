@@ -75,6 +75,25 @@ There also is a Controller UI that allows you to control the board manually from
 
 The use of *left*, *right*, *L* and *R* by Monk Makes can be confusing. I am using their [RasPiRobot Rover Kit](https://www.monkmakes.com/pi-rover/) that uses the RasPiRobot Board V3 as driver board. First, let's establish where rover's front is: it should be the direction the ultrasonic sensor is pointing to - because it's not very useful to measure distances at the rear of a rover, and their rover code samples also assume this to be the forward direction. Confusingly, if you follow the kit's instructions you will connect the left-hand side motor (relative to rover's front) to the port labeled *R* and the right-hand side motor to the port labeled *L*. The Scratch extension is consistent with that wiring. This has the advantage that you can use the rover sample code and Scratch extension without changing the wiring. If you use the expansion board to build your own rover, just remember to connect the left-hand side motor to the port labeled *R* and the right-hand side motor to the port labeled *L*. :smiley:
 
+# GPIO usage
+
+GPIO Pin (BCM) | Physical Pin | Usage
+---: | ---: | ---
+ 4 |  7 | Right Motor 2
+ 7 | 26 | LED 2
+ 8 | 24 | LED 1
+ 9 | 21 | SW2
+10 | 19 | Left Motor 1
+11 | 23 | SW1
+14 |  8 | Left Motor PWM
+17 | 11 | Right Motor 1
+18 | 12 | Trigger
+22 | 15 | OC1
+23 | 16 | Echo
+24 | 18 | Right Motor PWM
+25 | 22 | Left Motor 2
+27 | 13 | OC2
+
 # Security
 
 The server exposes expansion board functionality through unsecured HTTP endpoints. Everyone with access to the endpoints can control the board. The server needs to be run in a network that guards against unauthorized access.
